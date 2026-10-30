@@ -14,4 +14,9 @@ function wordCount(text) {
   return words[0] === "" ? 0 : words.length;
 }
 
-module.exports = { slugify, wordCount };
+/** Shorten a text to at most max characters, ending with "…" when cut. */
+function truncate(text, max) {
+  return text.length <= max ? text : text.slice(0, max - 1) + "…";
+}
+
+module.exports = { slugify, wordCount, truncate };
