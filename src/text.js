@@ -10,7 +10,7 @@ function slugify(title) {
 
 /** Count the words in a text. */
 function wordCount(text) {
-  const words = text.trim().split(" ");
+  const words = text.trim().split(/\s+/);
   return words[0] === "" ? 0 : words.length;
 }
 
