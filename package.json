@@ -2,10 +2,13 @@
   "name": "foreman-sandbox",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "description": "A small text library. The Foreman factory uses this repo for its live checks and evals.",
+  "description": "A small text and email library. The Foreman factory uses this repo for its live checks and evals.",
+  "packageManager": "pnpm@10.30.3",
   "scripts": {
-    "test": "node --test"
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "30.2.0"
   },
   "engines": {
     "node": ">=22"

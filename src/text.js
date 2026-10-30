@@ -1,5 +1,5 @@
 /** Turn a title into a URL slug: lower case, words joined by "-". */
-export function slugify(title) {
+function slugify(title) {
   return title
     .toLowerCase()
     .normalize("NFKD")
@@ -9,7 +9,9 @@ export function slugify(title) {
 }
 
 /** Count the words in a text. */
-export function wordCount(text) {
+function wordCount(text) {
   const words = text.trim().split(/\s+/);
   return words[0] === "" ? 0 : words.length;
 }
+
+module.exports = { slugify, wordCount };

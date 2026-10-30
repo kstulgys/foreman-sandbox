@@ -1,5 +1,8 @@
 # foreman-sandbox
 
-A small text library. The Foreman factory (`kstulgys/flue-factory`) uses this repo as its factory repo for live checks and evals. Its pull requests and branches come from the factory and from those checks.
+A small text and email library. The Foreman factory (`kstulgys/flue-factory`) uses this repo as its factory repo for live checks and evals. Its pull requests and branches come from the factory and from those checks.
 
-Run the tests with `npm test`.
+- `src/text.js`: `slugify` and `wordCount`.
+- `src/email.js`: `isValidEmail`, and the welcome and weekly digest emails.
+
+Install with `pnpm install`, and run the tests with `pnpm test` (Jest).

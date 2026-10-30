@@ -1,16 +1,14 @@
-import assert from "node:assert/strict";
-import { test } from "node:test";
-import { slugify, wordCount } from "../src/text.js";
+const { slugify, wordCount } = require("../src/text.js");
 
 test("slugify joins words with a dash", () => {
-  assert.equal(slugify("Hello, World!"), "hello-world");
+  expect(slugify("Hello, World!")).toBe("hello-world");
 });
 
 test("slugify removes accents", () => {
-  assert.equal(slugify("Crème brûlée"), "creme-brulee");
+  expect(slugify("Crème brûlée")).toBe("creme-brulee");
 });
 
 test("wordCount counts words", () => {
-  assert.equal(wordCount("  one two   three "), 3);
-  assert.equal(wordCount("   "), 0);
+  expect(wordCount("  one two   three ")).toBe(3);
+  expect(wordCount("   ")).toBe(0);
 });
