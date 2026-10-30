@@ -6,3 +6,10 @@ A small text and email library. The Foreman factory (`kstulgys/flue-factory`) us
 - `src/email.js`: `isValidEmail`, and the welcome and weekly digest emails.
 
 Install with `pnpm install`, and run the tests with `pnpm test` (Jest).
+
+## Reporting bugs
+
+When you open an issue, please include:
+
+- The version you're using: the `version` field in `package.json` (and the commit SHA, if you're working from a checkout).
+- Steps to reproduce: the code or input you ran, what you expected, and what happened instead.
