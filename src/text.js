@@ -14,4 +14,9 @@ function wordCount(text) {
   return words[0] === "" ? 0 : words.length;
 }
 
-module.exports = { slugify, wordCount };
+/** Count the characters (Unicode code points) in a text. With `spaces: false`, whitespace is left out. */
+function charCount(text, { spaces = true } = {}) {
+  return Array.from(spaces ? text : text.replace(/\s/g, "")).length;
+}
+
+module.exports = { slugify, wordCount, charCount };
