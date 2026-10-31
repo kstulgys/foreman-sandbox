@@ -14,4 +14,9 @@ function wordCount(text) {
   return words[0] === "" ? 0 : words.length;
 }
 
-module.exports = { slugify, wordCount };
+/** Return the text with its first character in upper case. */
+function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+module.exports = { slugify, wordCount, capitalize };
