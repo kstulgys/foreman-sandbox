@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shopping list</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 28rem; margin: 2rem auto; padding: 0 1rem; }
+      form { display: flex; gap: 0.5rem; }
+      input { flex: 1; padding: 0.4rem; font-size: 1rem; }
+      button { padding: 0.4rem 0.8rem; font-size: 1rem; }
+      ul { padding-left: 1.2rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Shopping list</h1>
+    <form id="add-form">
+      <input id="item" aria-label="Item" placeholder="Item" autocomplete="off" />
+      <button type="submit">Add</button>
+      <button type="button" id="clear">Clear</button>
+    </form>
+    <ul id="list" aria-label="Shopping list"></ul>
+    <p id="empty">The list is empty.</p>
+    <script>
+      // Eval fixture: Add works, Clear does nothing on purpose.
+      const form = document.getElementById("add-form");
+      const input = document.getElementById("item");
+      const list = document.getElementById("list");
+      const empty = document.getElementById("empty");
+      function showEmpty() {
+        empty.hidden = list.children.length > 0;
+      }
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const text = input.value.trim();
+        if (text === "") return;
+        const li = document.createElement("li");
+        li.textContent = text;
+        list.append(li);
+        input.value = "";
+        showEmpty();
+      });
+      document.getElementById("clear").addEventListener("click", () => {
+        // The bug under test: the list stays as it is.
+      });
+      showEmpty();
+    </script>
+  </body>
+</html>
